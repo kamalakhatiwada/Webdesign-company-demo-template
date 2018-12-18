@@ -90,8 +90,7 @@ a {
 }
 
 
-/*featured work*/
-
+/*===============featured work==============*/
 
 .feature{
   background: #eee;
@@ -102,10 +101,86 @@ a {
   padding-bottom: 40px;
 }
 
-.feature img{
+.single-img{
+  width: 30%;
+  float: left;
+  position: relative;
+  /*margin: 0 0;*/
+}
+
+.img-area{
+ overflow: hidden;
+  cursor: pointer;
+}
+
+.img-area img{
   height: 100%;
   width: 100%;
+  transition:.5s;
 }
+
+.single-img:hover img{
+  transform:rotate(-10deg) scale(1.3);
+  opacity: .5;
+}
+
+.img-text{
+  position: absolute;
+  top:20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+}
+
+.single-text{
+  color: #000;
+  text-transform: uppercase;
+  padding: 0 20px;
+  opacity: 0;
+  transition:.5s;
+}
+
+.single-text p{
+  position: absolute;
+  top: 80px;
+  border-left: 4px solid cyan;
+  padding:  0 10px;
+  font-size: 30px;
+  color: #fff;
+}
+
+.single-img:hover .single-text{
+  opacity: 1;
+}
+
+ .img-text:before,
+ .img-text:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition:.5s;
+ }
+
+.img-text:before{
+border-top: 1px solid cyan;
+border-bottom: 1px solid cyan;
+transform:scale(0,1);
+}
+
+.img-text:after{
+border-left: 1px solid cyan;
+border-right: 1px solid cyan;
+transform:scale(1,0);
+}
+
+.single-img:hover .img-text:before,
+.single-img:hover .img-text:after{
+  transform:scale(1,1);
+}
+
 
 
 /*what we offer*/
